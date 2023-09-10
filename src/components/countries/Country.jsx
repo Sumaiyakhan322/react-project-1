@@ -3,14 +3,13 @@ import { useState } from 'react';
 import './country.css'
 
 
-const Country = ({country,handleMarkVisited}) => {
+const Country = ({country,handleMarkVisited,hanldeFlages}) => {
     const [visit,setVisit]=useState(false)
     const handleVisited=()=>{
         setVisit(!visit);
     }
    
-    console.log(country);
-    console.log(handleMarkVisited);
+    
 
     const {name,flags,population,cca3}=country;
     return (
@@ -25,6 +24,8 @@ const Country = ({country,handleMarkVisited}) => {
             }
             <br />
             <button onClick={()=>handleMarkVisited(country)}>Mark as visited</button>
+            <br /><br /><br />
+            <button onClick={()=>hanldeFlages(country.flags.png)}>Flags added</button>
         </div>
     )
         }
